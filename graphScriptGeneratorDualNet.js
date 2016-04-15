@@ -63,7 +63,7 @@ outString = "";
 	//sqlString += ";";
 
 
-	gstarString = "";
+	gstarString = "new graph\n";
 	//Create vertex array
 nodes = nodesString.split("\n");
 //Create edge array
@@ -72,7 +72,7 @@ edges = edgesString.split("\n");
 	//Write vertices
 	for(var i = 0; i < nodes.length; i++){
 		if(nodes[i].trim() !== ""){
-			gstarString += "vertex " + nodes[i] + "\n";
+			gstarString += "add vertex " + nodes[i] + "\n";
 		}	
 	}
 
@@ -80,8 +80,8 @@ edges = edgesString.split("\n");
 	for(var j = 0; j < edges.length; j++){
 			if(edges[j].trim() !== ""){
 				edge = edges[j].substring(1,edges[j].length-2);
-				edge = edge.replace(", ", " ");
-				gstarString += "edge " + edge + "\n";
+				edge = edge.replace(", ", "-");
+				gstarString += "add edge " + edge + "\n";
 			}
 	}
 
